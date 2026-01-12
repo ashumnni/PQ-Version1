@@ -1,0 +1,8 @@
+
+{
+  "name": "NEXCHAKRA PG - Smart Living Redefined",
+  "description": "A premium, AI-powered Paying Guest management and discovery platform for students and working professionals in India. Features lifestyle matching, smart issue reporting, and transparent tenant management.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
