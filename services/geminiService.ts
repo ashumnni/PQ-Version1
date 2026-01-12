@@ -1,7 +1,7 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 
 export const getLifestyleMatch = async (userInput: {
   sleepTime: string;
@@ -40,7 +40,8 @@ export const getLifestyleMatch = async (userInput: {
       }
     });
 
-    return JSON.parse(response.text);
+    const text = response.text || "{}";
+    return JSON.parse(text);
   } catch (error) {
     console.error("AI Lifestyle Match Error:", error);
     return null;
@@ -70,7 +71,9 @@ export const analyzeComplaint = async (description: string) => {
         }
       }
     });
-    return JSON.parse(response.text);
+    
+    const text = response.text || "{}";
+    return JSON.parse(text);
   } catch (error) {
     console.error("AI Complaint Analysis Error:", error);
     return null;
@@ -88,7 +91,7 @@ export const chatWithNexBot = async (message: string, history: any[]) => {
       model: 'gemini-3-flash-preview',
       contents: prompt,
     });
-    return response.text;
+    return response.text || "I'm processing your request...";
   } catch (error) {
     console.error("NexBot Error:", error);
     return "I'm having a bit of trouble connecting to my neural net. Can you try again?";
