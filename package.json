@@ -1,4 +1,5 @@
 
+
 {
   "name": "nexchakra-pg",
   "private": true,
@@ -16,6 +17,7 @@
     "react-dom": "^19.2.3"
   },
   "devDependencies": {
+    "@types/node": "^22.13.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.4",
